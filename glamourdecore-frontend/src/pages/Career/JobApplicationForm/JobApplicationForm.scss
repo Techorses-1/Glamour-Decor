@@ -1,0 +1,169 @@
+.job-form-section {
+  width: 100%;
+  background: #f8f5ef;
+  padding: 100px 0;
+
+  @media (max-width: 768px) {
+
+    padding: 20px 0;
+  }
+}
+
+/* CONTAINER */
+.job-form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+/* LEFT FORM */
+.job-form-box {
+  width: 60%;
+  background: #2a158f;
+  padding: 40px;
+  border-radius: 28px;
+}
+
+.job-form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.job-form-box input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 10px 0;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.job-form-box input::placeholder {
+  color: white;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-upload {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.apply-btn {
+  margin-top: 20px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "HeadFonts";
+  letter-spacing: 1px;
+}
+
+
+
+/* RIGHT CONTENT */
+.job-form-content {
+  width: 40%;
+}
+
+.job-form-content h2 {
+  font-family: "HeadFonts";
+  font-size: 42px;
+  margin-bottom: 20px;
+
+  .underline {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #281A9B;
+    margin-top: 8px;
+    display: none;
+
+  }
+}
+
+.job-form-content p {
+  font-family: "Open Sans";
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+/* Social Icons - UPDATED WITH LINKS */
+.job-socials {
+  display: flex;
+  gap: 18px;
+  font-size: 18px;
+
+  .social-icon {
+    color: #281A9B;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px) scale(1.1);
+      color: #000;
+    }
+
+    svg {
+      display: block; // Ensure proper icon display
+    }
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .job-form-container {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .job-form-content {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .job-socials {
+    justify-content: center;
+  }
+
+  .job-form-box {
+    order: 2;
+    width: 85%;
+  }
+
+  .job-form-content h2 {
+    font-size: 28px;
+  }
+}

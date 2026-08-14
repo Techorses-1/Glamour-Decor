@@ -1,0 +1,135 @@
+/* ================= FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+  font-family: "HeadFonts";
+  src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "HeadFonts2";
+  src: url("../../../assets/fonts/head2.otf") format("opentype");
+}
+
+/* ================= SECTION ================= */
+.clear-jar-product-showcase {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.clear-jar-product-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ================= GRID : TOP ================= */
+.clear-jar-grid-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 40px;
+  justify-items: center;
+}
+
+/* ================= GRID : BOTTOM CENTER ================= */
+.clear-jar-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px 40px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 70%;
+  margin: 80px auto 0;
+}
+
+/* ================= CARD ================= */
+.clear-jar-card {
+  width: 230px;
+  cursor: pointer;
+}
+
+/* ================= BLUE BG ================= */
+.clear-jar-bg {
+  width: 100%;
+  height: 230px;
+  background: #2b179c;
+  border-radius: 28px;
+  position: relative;
+  margin-bottom: 12px;
+  overflow: visible;
+
+  img {
+    width: 160px;
+    height: 250px;
+    object-fit: contain;
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    transition: transform 0.4s ease;
+  }
+}
+
+/* Hover zoom */
+.clear-jar-card:hover .clear-jar-bg img {
+  transform: translateX(-50%) scale(1.08);
+}
+
+/* ================= TEXT ================= */
+.clear-jar-card h4 {
+  font-family: "HeadFonts", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 10px 0 4px;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.clear-jar-card .ml {
+  display: block;
+  font-family: "HeadFonts", sans-serif;
+  font-size: 15px;
+  margin-left: 1rem;
+}
+
+.clear-jar-card .link {
+  font-family: "HeadFonts", sans-serif;
+  font-size: 14px;
+  color: #1cbf73;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 992px) {
+
+  .clear-jar-product-container {
+    width: 90%;
+  }
+
+  .clear-jar-grid-top,
+  .clear-jar-grid-bottom {
+    grid-template-columns: 1fr;
+    gap: 70px;
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .clear-jar-grid-bottom {
+    margin-top: 70px;
+  }
+
+  .clear-jar-card {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .clear-jar-bg {
+    height: 240px;
+
+    img {
+      width: 190px;
+      height: 240px;
+      top: -50px;
+    }
+  }
+}

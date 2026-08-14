@@ -1,0 +1,58 @@
+/* ================= PARALLAX/FIXED BACKGROUND EFFECT ================= */
+.fixed-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* 60vh as you wanted */
+  margin: 0;
+  padding: 0;
+}
+
+/* Fixed background image container - CENTERED */
+.fixed-image {
+  position: fixed; /* Fixed position */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Perfect centering */
+  width: 100%;
+  height: 100vh; /* Same 60vh */
+  z-index: 1; /* Lower z-index so content goes over it */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Image styling - centered */
+.fixed-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Transparent section for content to scroll over */
+.scroll-over-section {
+  position: relative;
+  z-index: 2; /* Higher than fixed image */
+  background-color: transparent;
+  min-height: 60vh; /* Same as fixed image height */
+  width: 100%;
+}
+
+/* Content inside About component should have higher z-index */
+.about > *:not(.fixed-image-wrapper) {
+  position: relative;
+  z-index: 3; /* Even higher to ensure it's above everything */
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .fixed-image-wrapper,
+  .fixed-image {
+    height: 90vh; /* 50vh on mobile as you specified */
+  }
+  
+  .scroll-over-section {
+    min-height: 30vh; /* Match mobile height */
+  }
+}

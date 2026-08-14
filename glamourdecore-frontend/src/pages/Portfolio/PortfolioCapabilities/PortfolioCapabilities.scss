@@ -1,0 +1,221 @@
+/* ================= SECTION ================= */
+.portfolio-capabilities {
+  width: 100%;
+  background: #ffffff;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.portfolio-cap-container {
+  max-width: 1270px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ================= HEADING ================= */
+.portfolio-heading {
+  margin-bottom: 30px;
+  opacity: 0;
+
+  &.animate {
+    animation: fadeInUp 1s ease forwards;
+
+    .underline {
+      width: 0;
+      animation: underlineGrow 0.8s ease 0.8s forwards;
+    }
+  }
+
+  .small-title {
+    font-family: "HeadFonts";
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #000;
+    display: block;
+  }
+
+  h2 {
+    font-family: "HeadFonts";
+    font-size: 42px;
+    font-weight: 600;
+    color: #000;
+    display: inline-block;
+    position: relative;
+    margin-top: 0px;
+
+    .underline {
+      display: block;
+      height: 3px;
+      background: #280f91;
+      margin-top: 8px;
+      margin-left: 0;
+    }
+  }
+}
+
+/* ================= ROW ================= */
+.portfolio-cap-row {
+  display: grid;
+  grid-template-columns: 0.35fr 1fr;
+  gap: 50px;
+  align-items: stretch;
+  opacity: 0;
+
+  &.animate {
+    animation: fadeInUp 1s ease forwards;
+
+    .cap-left {
+      animation: fadeInLeft 0.8s ease 0.3s forwards;
+    }
+
+    .cap-right {
+      animation: fadeInRight 0.8s ease 0.3s forwards;
+    }
+  }
+}
+
+/* ================= LEFT IMAGE WITH HOVER EFFECT ================= */
+.cap-left {
+  opacity: 0;
+  overflow: hidden; /* ADDED for zoom effect */
+  border-radius: 4px;
+  position: relative; /* ADDED for better control */
+
+  img {
+    width: 100%;
+    height: 460px;        /* FIXED HEIGHT */
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.5s ease, filter 0.5s ease; /* ADDED transition */
+    transform: scale(1); /* Default scale */
+  }
+
+  /* HOVER EFFECT - Smooth zoom in */
+  &:hover img {
+    transform: scale(1.05); /* Zoom in 5% */
+    filter: brightness(1.02); /* Slightly brighter on hover */
+  }
+}
+
+/* ================= RIGHT ================= */
+.cap-right {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cap-points {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 25px;
+
+  li {
+    font-family: "Open Sans";
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #111;
+    text-align: justify;
+  }
+}
+
+/* ================= SMALL IMAGES WITH HOVER EFFECT ================= */
+.cap-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  img {
+    width: 100%;
+    height: 200px;      /* FIXED HEIGHT */
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.5s ease, filter 0.5s ease; /* ADDED transition */
+    transform: scale(1); /* Default scale */
+    cursor: pointer; /* Shows it's interactive */
+
+    /* HOVER EFFECT - Smooth zoom in */
+    &:hover {
+      transform: scale(1.08); /* Zoom in 8% (slightly more than big image) */
+      filter: brightness(1.05); /* Slightly brighter on hover */
+    }
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 992px) {
+  .portfolio-cap-container {
+    width: 90%;
+  }
+
+  .portfolio-cap-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cap-left img {
+    height: 260px;
+  }
+
+  .cap-images {
+    grid-template-columns: 1fr;
+    
+    img {
+      height: 200px;
+    }
+  }
+
+  .portfolio-heading {
+    .small-title {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+}
+
+/* ================= ANIMATION KEYFRAMES (if not already in global styles) ================= */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes underlineGrow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60px;
+  }
+}

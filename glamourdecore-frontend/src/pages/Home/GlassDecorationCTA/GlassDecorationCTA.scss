@@ -1,0 +1,311 @@
+/* ================= ANIMATION KEYFRAMES ================= */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes underlineGrow {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 60px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ================= FONT ================= */
+@font-face {
+    font-family: "HeadFonts";
+    src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: "HeadFonts2";
+    src: url("../../../assets/fonts/head2.otf") format("opentype");
+}
+
+/* ================= SECTION ================= */
+.glass-cta {
+    position: relative;
+    width: 100%;
+    height: 640px;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* OVERLAY */
+.glass-cta-overlay {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    position: relative;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.15));
+}
+
+/* CONTENT */
+.glass-cta-content {
+    max-width: 780px;
+    text-align: center;
+    opacity: 0;
+    
+    &.animate {
+        animation: fadeInUp 1.2s ease forwards;
+        
+        h2 {
+            opacity: 0;
+            animation: slideInBottom 1s ease 0.3s forwards;
+        }
+        
+        .underline {
+            animation: underlineGrow 0.8s ease 0.8s forwards;
+            width: 0;
+            opacity: 0;
+        }
+        
+        p {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 1.2s forwards;
+        }
+    }
+
+    h2 {
+        font-family: "HeadFonts";
+        font-size: 42px;
+        line-height: 1.25;
+        margin-bottom: 14px;
+        margin-top: 0 !important;
+    }
+
+    .underline {
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #280f91;
+        margin: 0 auto 80px;
+        transition: width 0.5s ease;
+
+        @media (max-width: 768px) {
+            margin: 0 auto 18px;
+        }
+    }
+
+    p {
+        font-family: "HeadFonts2";
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}
+
+/* DESKTOP CTA */
+.cta-desktop {
+    position: absolute;
+    right: 7%;
+    bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    opacity: 0;
+    
+    &.animate {
+        animation: fadeInRight 1s ease 1.5s forwards;
+    }
+
+    svg {
+        font-size: 32px;
+        color: #1aff00;
+        transition: transform 0.4s ease;
+    }
+    
+    &:hover {
+        svg {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+/* MOBILE IMAGE */
+.glass-cta-image {
+    display: none;
+}
+
+/* MOBILE CTA */
+.cta-mobile {
+    display: none;
+    opacity: 0;
+    
+    &.animate {
+        animation: scaleIn 0.8s ease 0.8s forwards;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .glass-cta-content br {
+        display: none;
+    }
+
+    .glass-cta {
+        height: auto;
+        background: none;
+    }
+
+    .glass-cta-overlay {
+        padding: 60px 6%; /* Increased padding */
+        background: #f6f2ec;
+        color: #000;
+        text-align: left;
+    }
+
+    .glass-cta-content {
+        text-align: left;
+        
+        &.animate {
+            animation: fadeInUp 1s ease forwards;
+            
+            h2 {
+                animation: slideInBottom 0.8s ease 0.2s forwards;
+            }
+            
+            .underline {
+                animation: underlineGrow 0.6s ease 0.6s forwards;
+                width: 0;
+                opacity: 0;
+            }
+            
+            p {
+                animation: fadeInUp 0.6s ease 0.8s forwards;
+            }
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 14px;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .underline {
+            margin-left: 0;
+            margin-bottom: 25px;
+            width: 45px;
+            height: 2px;
+        }
+    }
+
+    .cta-desktop {
+        display: none;
+    }
+
+    .glass-cta-image {
+        display: block;
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .cta-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 22px 0;
+        background: #f6f2ec;
+        color: #000;
+        font-family: "HeadFonts2";
+        cursor: pointer;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: translateX(10px);
+            
+            svg {
+                transform: rotate(45deg);
+            }
+        }
+
+        svg {
+            color: #280f91;
+            font-size: 22px;
+            transition: transform 0.3s ease;
+        }
+    }
+}
+
+/* Additional hover effects for desktop */
+@media (min-width: 769px) {
+    .glass-cta-content:hover .underline {
+        width: 80px;
+        transition: width 0.5s ease;
+    }
+    
+    .cta-desktop:hover {
+        transform: translateX(10px);
+        transition: transform 0.4s ease;
+    }
+}

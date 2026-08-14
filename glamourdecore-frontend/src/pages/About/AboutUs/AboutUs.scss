@@ -1,0 +1,525 @@
+/* ================= FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+  font-family: "HeadFonts";
+  src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "HeadFonts2";
+  src: url("../../../assets/fonts/head2.otf") format("opentype");
+}
+
+/* ================= ANIMATION KEYFRAMES ================= */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes underlineGrow {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 60px;
+  }
+}
+
+// @keyframes shadowAppear {
+//   0% {
+//     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+//   }
+//   100% {
+//     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+//   }
+// }
+
+@keyframes bannerSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= ABOUT US SECTION ================= */
+.about-section {
+  width: 100%;
+  background: #f6f2ec;
+  padding: 80px 0;
+  overflow: hidden;
+
+  @media (max-width: 992px) {
+    padding: 40px 0;
+  }
+}
+
+/* ================= HEADER ANIMATIONS ================= */
+.about-header {
+  width: 85%;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0;
+
+  @media (max-width: 992px) {
+    width: 90%;
+  }
+
+  &.animate {
+    animation: fadeInUp 0.8s ease forwards;
+
+    .small-title {
+      animation: fadeInLeft 0.6s ease 0.2s forwards;
+      opacity: 0;
+    }
+
+    h2 {
+      animation: fadeInRight 0.6s ease 0.4s forwards;
+      opacity: 0;
+    }
+
+    .blue-underline {
+      animation: underlineGrow 0.6s ease 0.6s forwards;
+      width: 0;
+    }
+  }
+
+  .small-title {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #000;
+    font-weight: 500;
+    font-family: "HeadFonts";
+  }
+
+  h2 {
+    font-size: 42px;
+    color: #0c1a52;
+    font-family: "HeadFonts";
+    margin: 0;
+  }
+
+  .blue-underline {
+    width: 60px;
+    height: 3.5px;
+    background: #280f91;
+    margin-top: 6px;
+  }
+}
+
+/* ================= BANNER IMAGE ANIMATION ================= */
+.about-banner {
+  width: 85%;
+  height: 320px;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+
+  &.animate {
+    animation: bannerSlideUp 0.8s ease 0.8s forwards;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ================= CONTENT ROW ================= */
+.about-content-row {
+  width: 85%;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  @media (max-width: 992px) {
+    width: 90%;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+/* ===== LEFT TEXT ANIMATION ===== */
+.about-text {
+  flex: 0 0 60%;
+  max-width: 550px;
+  opacity: 0;
+
+  &.animate {
+    animation: fadeInLeft 0.8s ease 1s forwards;
+  }
+
+  .intro-text {
+    font-size: 31px;
+    line-height: 1.4;
+    margin-bottom: 35px;
+    color: #111;
+    font-family: "HeadFonts";
+    font-weight: 500;
+  }
+}
+
+/* ================= VISION & MISSION ANIMATIONS ================= */
+.vision-mission {
+  display: flex;
+  gap: 65px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+.vm-box {
+  flex: 1;
+  opacity: 0;
+
+  &.animate {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0c1a52;
+    font-family: "HeadFonts";
+    margin-bottom: 0;
+  }
+
+  .vm-underline {
+    display: block;
+    width: 42px;
+    height: 3px;
+    background: #23cb66;
+    margin-bottom: 14px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+/* ===== RIGHT IMAGE ANIMATION ===== */
+.about-image {
+  flex: 0 0 40%;
+  width: 400px;
+  height: 420px;
+  margin-left: auto;
+  // border-radius: 10px; 
+  overflow: hidden;
+  // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18); 
+  box-shadow: none;
+  opacity: 0;
+
+  &.animate {
+    animation: fadeInRight 0.8s ease forwards;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    background: transparent;
+    box-shadow: none; 
+
+
+    @media (min-width: 1601px)
+    {
+      //  width: 80%;  
+        object-fit: contain; 
+    }
+  }
+}
+
+/* ================= BOTTOM ROW ================= */
+.about-bottom-row {
+  width: 85%;
+  margin: 90px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: 992px) {
+    width: 90%;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+/* ===== LEFT IMAGE ANIMATION ===== */
+.bottom-image {
+  flex: 0 0 63%;
+  /* INCREASED from 50% to 65% */
+  height: 400px;
+  border-radius: 10px 0 0 10px;
+  /* Rounded left corners only */
+  overflow: hidden;
+  box-shadow: none;
+  opacity: 0;
+  /* REMOVE left margin to touch left side */
+  margin-left: -8.75%;
+  /* This pushes it to touch left edge */
+
+ &.animate {
+    animation: fadeInLeft 0.8s ease forwards;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @media (min-width: 1601px)
+    {
+       width: 80%; 
+      //  object-fit: contain; 
+    }
+  }
+
+   
+}
+
+/* ===== RIGHT TEXT ANIMATION ===== */
+.bottom-text {
+  flex: 0 0 37%;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  opacity: 0;
+
+  &.animate {
+    animation: fadeInRight 0.8s ease forwards;
+  }
+
+  .vertical-line {
+    width: 3px;
+    height: 45px;
+    background: #23cb66;
+    flex-shrink: 0;
+  }
+
+  >div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0c1a52;
+    font-family: "HeadFonts";
+    margin: 0;
+  }
+
+  h5 {
+    font-size: 14px;
+    margin: 4px 0 16px;
+    color: #444;
+    font-family: "HeadFonts2";
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    font-family: "Open Sans", sans-serif;
+    text-align: justify;
+  }
+}
+
+/* ================= MOBILE VIEW ONLY ================= */
+@media (max-width: 768px) {
+
+  /* HEADER ANIMATIONS FOR MOBILE */
+  .about-header {
+    &.animate {
+
+      .small-title,
+      h2,
+      .blue-underline {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .small-title {
+        animation-delay: 0.2s;
+      }
+
+      h2 {
+        animation-delay: 0.4s;
+      }
+
+      .blue-underline {
+        animation-delay: 0.6s;
+      }
+    }
+
+    .small-title {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  /* INTRO TEXT */
+  .about-text {
+    max-width: 100%;
+
+    .intro-text {
+      font-size: 24px;
+      text-align: justify;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* VISION & MISSION */
+  .vm-box {
+    h4 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 15px;
+      text-align: justify;
+    }
+  }
+
+  /* FIX IMAGE HEIGHT AFTER VISION-MISSION */
+  .about-image {
+    width: 100%;
+    height: 240px;
+    margin-left: 0;
+
+    &.animate {
+      animation: fadeInLeft 0.8s ease forwards;
+    }
+  }
+
+  /* BOTTOM ROW ORDER */
+  .about-bottom-row {
+    flex-direction: column-reverse;
+  }
+
+  .bottom-text {
+    flex: 100%;
+
+    &.animate {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    h5 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      text-align: justify;
+    }
+  }
+
+  .bottom-image {
+    flex: 100%;
+    height: 240px;
+
+    &.animate {
+    animation: fadeInLeft 0.8s ease forwards;
+  }
+  }
+}
+
+/* Animation delay for mobile */
+@media (max-width: 768px) {
+  .about-banner.animate {
+    animation-delay: 0.8s;
+  }
+
+  .about-text.animate {
+    animation-delay: 1s;
+  }
+
+  .vm-box.animate:nth-child(1) {
+    animation-delay: 1.2s;
+  }
+
+  .vm-box.animate:nth-child(2) {
+    animation-delay: 1.4s;
+  }
+
+  .about-image.animate {
+    animation-delay: 1.6s;
+  }
+
+  .bottom-image.animate {
+    animation-delay: 1.8s;
+  }
+
+  .bottom-text.animate {
+    animation-delay: 2s;
+  }
+}

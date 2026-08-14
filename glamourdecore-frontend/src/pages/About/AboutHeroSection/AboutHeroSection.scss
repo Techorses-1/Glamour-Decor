@@ -1,0 +1,69 @@
+/* ABOUT HERO SECTION - FULL SCREEN */
+.about-hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background Image */
+.about-hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Slight dark overlay */
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+/* CONTENT CENTERED */
+.about-hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 5;
+
+  h1 {
+    font-family: "Prata", serif;
+    color: #ffffff;
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .about-hero-content h1 {
+    font-size: 52px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .about-hero {
+    margin-top: 75px;
+    height: 25vh;
+  }
+
+  .about-hero-bg-image {
+    object-fit: contain;   /* 👈 KEY CHANGE */
+  }
+
+  .about-hero-content h1 {
+    font-size: 38px;
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,106 @@
+/* ================= FONT ================= */
+@font-face {
+  font-family: "HeadFonts";
+  src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "HeadFonts2";
+  src: url("../../../assets/fonts/head2.otf") format("opentype");
+}
+
+
+/* ================= INFO MARQUEE SECTION ================= */
+
+.info-marquee-section {
+  background: #f6f2ec;
+  /* SAME BG AS IMAGE */
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+/* MARQUEE WRAPPER */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* MOVING TRACK */
+.marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 25s linear infinite;
+}
+
+/* CARD */
+.info-card {
+  min-width: 420px;
+  margin: 0 20px;
+  padding: 28px 40px;
+  border: 2px solid #000;
+  border-radius: 90px;
+  background: transparent;
+  text-align: center;
+  flex-shrink: 0;
+
+  h3 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-family: "HeadFonts", sans-serif;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.4;
+    font-family: "HeadFonts2", sans-serif;
+    font-weight: 600 !important;
+  }
+}
+
+/* ANIMATION (RIGHT ➜ LEFT) */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .info-marquee-section {
+    padding: 40px 0; /* Reduced padding */
+  }
+  
+  .info-card {
+    min-width: 220px; /* REDUCED FURTHER - Very compact */
+    margin: 0 8px; /* Reduced margin */
+    padding: 10px 14px; /* Reduced padding */
+    border-radius: 50px; /* Reduced border radius */
+
+    h3 {
+      font-size: 16px; /* Reduced font size */
+      margin-bottom: 4px;
+      margin-top: 4px;
+    }
+
+    p {
+      font-size: 11px; /* Reduced font size */
+      line-height: 1.2; /* Tighter line height */
+    }
+  }
+
+  .marquee-track {
+    animation-duration: 16s; /* Faster animation for smaller cards */
+  }
+}
+
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}

@@ -1,0 +1,94 @@
+/* ContactHero.scss */
+/* ================= FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+  font-family: "HeadFonts";
+  src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "HeadFonts2";
+  src: url("../../../assets/fonts/head2.otf") format("opentype");
+}
+
+/* ================= CONTACT HERO SECTION ================= */
+.contact-hero {
+  width: 100%;
+  background: #f6f2ec;
+  padding: 80px 0 20px 0px;
+
+  @media (max-width: 992px) {
+    padding: 40px 0 0 0;
+  }
+}
+
+/* ================= HEADER ================= */
+.contact-hero-header {
+  width: 85%;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 992px) {
+    width: 90%;
+  }
+
+  .small-title {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #000;
+    font-weight: 500;
+    font-family: "HeadFonts";
+  }
+
+  h2 {
+    font-size: 42px;
+    color: #0c1a52;
+    font-family: "HeadFonts";
+    margin: 0;
+  }
+
+  .blue-underline {
+    width: 60px;
+    height: 3px;
+    background: #280f91;;
+    margin-top: 6px;
+  }
+}
+
+/* ================= BANNER IMAGE ================= */
+.contact-hero-banner {
+  width: 85%;
+  height: 320px;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 992px) {
+    width: 90%;
+    height: 240px;
+  }
+}
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+  .contact-hero-header {
+    .small-title {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+}

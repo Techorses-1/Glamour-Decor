@@ -1,0 +1,359 @@
+/* ================= FONT ================= */
+@font-face {
+    font-family: "HeadFonts";
+    src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "HeadFonts2";
+    src: url("../../../assets/fonts/head2.otf") format("opentype");
+}
+
+/* ================= ANIMATION KEYFRAMES ================= */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes underlineGrow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60px;
+  }
+}
+
+/* ================= SECTION ================= */
+.partners-section {
+    background: #fff;
+    padding: 90px 0;
+
+    @media (max-width: 992px) {
+        padding: 50px 0;
+    }
+}
+
+.partners-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+/* ================= HEADING (Same as PortfolioCapabilities) ================= */
+.portfolio-heading {
+  margin-bottom: 50px;
+  opacity: 0;
+
+  &.animate {
+    animation: fadeInUp 1s ease forwards;
+
+    .underline {
+      width: 0;
+      animation: underlineGrow 0.8s ease 0.8s forwards;
+    }
+  }
+
+  .small-title {
+    font-family: "HeadFonts";
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #000;
+    display: block;
+  }
+
+  h2 {
+    font-family: "HeadFonts";
+    font-size: 42px;
+    font-weight: 600;
+    color: #000;
+    display: inline-block;
+    position: relative;
+    margin-top: 0px;
+
+    .underline {
+      display: block;
+      height: 3px;
+      background: #280f91;
+      margin-top: 8px;
+      margin-left: 0;
+    }
+  }
+}
+
+/* ================= CONTENT ROW with animations ================= */
+.portfolio-partners-row {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  opacity: 0;
+
+  &.animate {
+    animation: fadeInUp 1s ease forwards;
+
+    .partners-logos {
+      animation: fadeInLeft 0.8s ease 0.3s forwards;
+    }
+
+    .partners-content {
+      animation: fadeInRight 0.8s ease 0.3s forwards;
+    }
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* LOGOS with hover effects */
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.logo-box {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    height: 120px;
+    align-items: center;
+
+    &.animate {
+      animation: scaleIn 0.5s ease forwards;
+    }
+
+    img {
+        max-width: 100px;
+        opacity: 0.9;
+        transition: transform 0.5s ease, filter 0.5s ease, opacity 0.3s ease;
+        cursor: pointer;
+        
+        /* HOVER EFFECT - Smooth zoom and highlight */
+        &:hover {
+            transform: scale(1.15);
+            filter: brightness(1.1);
+            opacity: 1;
+        }
+    }
+}
+
+/* CONTENT with animation */
+.partners-content {
+    text-align: right;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+
+    &.animate {
+      animation: fadeInRight 0.8s ease 0.3s forwards;
+    }
+}
+
+.underline {
+    margin-left: auto;
+    margin-top: 18px;
+    width: 60px;
+    height: 3px;
+    background: #280f91;
+}
+
+.quote {
+    margin-top: -2.5rem;
+    font-size: 100px;
+    color: #280f91;
+}
+
+.content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0px;
+}
+
+.years {
+    font-size: 90px;
+    font-weight: 700;
+    margin-top: -4.5rem;
+    font-family: "HeadFonts";
+}
+
+.text {
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.underline {
+    margin-left: auto;
+    margin-top: 0px;
+    width: 60px;
+    height: 3px;
+    background: #280f91;
+}
+
+.strong {
+    font-size: 3rem;
+}
+
+/* MOBILE */
+.partners-marquee {
+    display: none;
+
+    &.animate {
+      animation: fadeInUp 1s ease 0.5s forwards;
+      opacity: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .partners-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* HIDE DESKTOP GRID */
+    .partners-logos {
+        display: none;
+    }
+
+    /* HEADING MOBILE */
+    .portfolio-heading {
+      margin-bottom: 30px;
+      
+      .small-title {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    /* CONTENT MOBILE */
+    .partners-content {
+        text-align: center;
+        margin-bottom: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .quote {
+        font-size: 80px;
+    }
+
+    .years {
+        font-size: 50px;
+        margin-top: -3rem;
+    }
+
+    .text {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+
+    .strong {
+        font-size: 30px;
+    }
+
+    .underline {
+        margin: 12px auto 0;
+    }
+
+    /* MARQUEE with hover effects */
+    .partners-marquee {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        padding: 16px 0;
+        opacity: 0;
+    }
+
+    .marquee-track {
+        display: flex;
+        gap: 40px;
+        width: max-content;
+        animation: marquee 28s linear infinite;
+    }
+
+    .marquee-track:hover {
+        animation-play-state: paused;
+    }
+
+    .marquee-logo {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Logo images with hover effects */
+    .marquee-logo img {
+        width: 80px;
+        height: auto;
+        display: block;
+        opacity: 0.9;
+        transition: transform 0.5s ease, filter 0.5s ease, opacity 0.3s ease;
+        cursor: pointer;
+        
+        /* HOVER EFFECT - Same as desktop */
+        &:hover {
+            transform: scale(1.2);
+            filter: brightness(1.1);
+            opacity: 1;
+        }
+    }
+}
+
+/* MARQUEE ANIMATION */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

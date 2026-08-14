@@ -1,0 +1,241 @@
+/* ================= FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+@font-face {
+    font-family: "HeadFonts";
+    src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "HeadFonts2";
+    src: url("../../../assets/fonts/head2.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ================= ANIMATIONS (SAME SYSTEM AS AWESOME SERVICES) ================= */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes underlineGrow {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 60px;
+    }
+}
+
+/* ================= SECTION ================= */
+.clear-glass-hero {
+    width: 100%;
+    background: #ffffff;
+    padding: 100px 0 20px 0;
+    overflow: hidden;
+}
+
+.clear-glass-container {
+    max-width: 1270px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ================= TOP ROW ================= */
+.clear-glass-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    opacity: 0;
+
+    &.animate {
+        animation: fadeInUp 1s ease forwards;
+
+        .clear-glass-content {
+            opacity: 0;
+            animation: fadeInLeft 0.8s ease 0.3s forwards;
+        }
+
+        .clear-glass-image {
+            opacity: 0;
+            animation: fadeInRight 0.8s ease 0.3s forwards;
+        }
+
+        .underline {
+            width: 0;
+            animation: underlineGrow 0.8s ease 1s forwards;
+        }
+    }
+}
+
+/* ================= LEFT CONTENT ================= */
+.clear-glass-content {
+    .small-title {
+        margin-top: 3rem;
+        font-family: "HeadFonts", sans-serif;
+        font-size: 30px;
+        letter-spacing: 2px;
+        color: #311895; 
+        display: block;
+        margin-bottom: 0px;
+
+        @media (max-width: 992px) {
+            margin-top: 1rem;
+        }
+    }
+
+    h2 {
+        font-family: "HeadFonts", sans-serif;
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        margin-top: 0px;
+        position: relative;
+        display: inline-block;
+        color: #311895; 
+
+        .underline {
+            display: block;
+            height: 3px;
+            background: #2ecc71;
+            margin-top: 8px;
+            margin-left: 0;
+        }
+    }
+
+    .para-one {
+        font-size: 16px;
+        font-family: "Open Sans", sans-serif;
+
+        line-height: 1.6;
+        max-width: 90%;
+        text-align: justify;
+        color: #111;
+    }
+}
+
+/* ================= RIGHT IMAGE ================= */
+.clear-glass-image {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /* RIGHT aligned on desktop */
+
+    img {
+        width: 520px;
+        /* fixed width */
+        height: 350px;
+        /* FIXED height */
+        object-fit: cover;
+        /* prevents stretch */
+        display: block;
+        border-radius: 4px;
+    }
+}
+
+/* ================= FULL WIDTH PARAGRAPH ================= */
+.clear-glass-full-para {
+    margin-top: 40px;
+    opacity: 0;
+
+    &.animate {
+        animation: fadeInUp 0.8s ease 0.6s forwards;
+    }
+
+    p {
+        font-size: 16px;
+            font-family: "Open Sans", sans-serif;
+
+        line-height: 1.7;
+        text-align: justify;
+        color: #111;
+        max-width: 100%;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 992px) {
+    .clear-glass-container {
+        width: 90%;
+    }
+
+    .clear-glass-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .clear-glass-content {
+        .small-title {
+            font-size: 20px;
+            letter-spacing: 1.5px;
+        }
+
+        h2 {
+            font-size: 28px;
+
+            .underline {
+                height: 2px;
+                width: 45px;
+            }
+        }
+
+        .para-one {
+            max-width: 100%;
+        }
+    }
+
+    .clear-glass-full-para {
+        margin-top: 25px;
+    }
+
+
+    .clear-glass-image {
+        justify-content: center;
+        /* CENTER on mobile */
+
+        img {
+            width: 100%;
+            max-width: 420px;
+            height: 260px;
+            /* reduced fixed height */
+        }
+    }
+}

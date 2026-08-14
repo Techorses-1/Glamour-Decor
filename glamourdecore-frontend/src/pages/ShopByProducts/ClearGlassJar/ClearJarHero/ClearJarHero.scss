@@ -1,0 +1,215 @@
+/* ================= FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+    font-family: "HeadFonts";
+    src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: "HeadFonts2";
+    src: url("../../../assets/fonts/head2.otf") format("opentype");
+}
+
+/* ================= ANIMATIONS (SAME AS CLEAR GLASS) ================= */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes underlineGrow {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 60px;
+    }
+}
+
+/* ================= SECTION ================= */
+.clear-jar-hero {
+    width: 100%;
+    background: #ffffff;
+    padding: 100px 0 20px;
+    overflow: hidden;
+}
+
+.clear-jar-container {
+    max-width: 1270px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ================= ROW ================= */
+.clear-jar-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    opacity: 0;
+
+    &.animate {
+        animation: fadeInUp 1s ease forwards;
+
+        .clear-jar-content {
+            opacity: 0;
+            animation: fadeInLeft 0.8s ease 0.3s forwards;
+        }
+
+        .clear-jar-image {
+            opacity: 0;
+            animation: fadeInRight 0.8s ease 0.3s forwards;
+        }
+
+        .underline {
+            width: 0;
+            animation: underlineGrow 0.8s ease 1s forwards;
+        }
+    }
+}
+
+/* ================= CONTENT ================= */
+.clear-jar-content {
+
+    .small-title {
+        margin-top: 3rem;
+        font-family: "HeadFonts", sans-serif;
+        font-size: 30px;
+        letter-spacing: 2px;
+        color: #311895;
+        display: block;
+        margin-bottom: 0px;
+
+        @media (max-width: 992px) {
+            margin-top: 1rem;
+        }
+    }
+
+    h2 {
+        font-family: "HeadFonts", sans-serif;
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        margin-top: 0px;
+        position: relative;
+        display: inline-block;
+        color: #311895;
+
+        .underline {
+            display: block;
+            height: 3px;
+            background: #2ecc71;
+            margin-top: 8px;
+            margin-left: 0px;
+        }
+    }
+
+    .para-one {
+        font-size: 16px;
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.6;
+        max-width: 90%;
+        text-align: justify;
+        color: #111;
+    }
+}
+
+/* ================= IMAGE ================= */
+.clear-jar-image {
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+        width: 520px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+}
+
+/* ================= BOTTOM PARAGRAPH ================= */
+.clear-jar-full-para {
+    margin-top: 40px;
+    opacity: 0;
+
+    &.animate {
+        animation: fadeInUp 0.8s ease 0.6s forwards;
+    }
+
+    p {
+        font-size: 16px;
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.7;
+        text-align: justify;
+        color: #111;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 992px) {
+    .clear-jar-container {
+        width: 90%;
+    }
+
+    .clear-jar-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .clear-jar-content {
+        .small-title {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        .para-one {
+            max-width: 100%;
+        }
+    }
+
+    .clear-jar-image {
+        justify-content: center;
+
+        img {
+            width: 100%;
+            max-width: 420px;
+            height: 260px;
+        }
+    }
+}

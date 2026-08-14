@@ -1,0 +1,305 @@
+/* ================= FONT ================= */
+@font-face {
+  font-family: "NavFonts";
+  src: url("../../assets/fonts/navfont.otf") format("opentype");
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 10px 22px;
+  background: transparent;
+  transition: 0.3s ease;
+  font-family: "NavFonts", sans-serif;
+
+  &.scrolled {
+    background: #ffffff;
+    /* CHANGED: White background on scroll */
+    padding: 10px 22px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for better visibility */
+  }
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    justify-content: space-between;
+  }
+}
+
+/* LOGO */
+.nav-logo {
+  width: 110px;
+}
+
+/* LINKS + HAMBURGER */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  position: relative;
+  z-index: 1001;
+
+  li a {
+    color: white;
+    /* Default color (before scroll) */
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+
+    &:hover {
+      color: #4CAF50;
+      /* Yellow hover (same as before) */
+    }
+
+    /* ACTIVE LINK UNDERLINE EFFECT */
+    &.active {
+      color: #4CAF50;
+      /* Highlight color for active link */
+
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   bottom: 0;
+      //   left: 0;
+      //   width: 100%; 
+      //   height: 2px;
+      //   background-color: #f2d675;
+      //   animation: underlineGrow 0.3s ease forwards;
+      // }
+    }
+
+  }
+
+  /* CHANGED: Links color when scrolled */
+  .scrolled & li a {
+    color: #0c1a52;
+    /* Blue color when scrolled */
+
+    &:hover {
+      color: #4CAF50;
+      /* Yellow hover remains same */
+    }
+
+    &.active {
+      color: #4CAF50;
+
+      &::after {
+        background-color: #4CAF50;
+      }
+    }
+
+  }
+}
+
+.contact-btn a {
+  padding: 8px 18px;
+  border: 1.5px solid #4CAF50 ;
+  border-radius: 25px;
+  transition: 0.3s;
+  color: white !important;
+
+  &:hover {
+    background: #4CAF50  !important;
+    color: white !important;
+    border-color: #4CAF50  !important;
+  }
+
+  /* SCROLLED STATE */
+   .scrolled & {
+    border: 1.5px solid #4CAF50;
+    color: #0c1a52 !important; /* Blue text when scrolled */
+
+    &:hover {
+      background: #4CAF50 !important; /* Green background */
+      color: white !important; /* White text on hover */
+      border-color: #4CAF50 !important;
+    }
+  }
+}
+
+
+
+.menu-toggle {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+
+  /* CHANGED: Icon color when scrolled */
+  .scrolled & {
+    color: #0c1a52;
+    /* Blue color when scrolled */
+  }
+}
+
+/* ================= MENU PANEL ================= */
+.menu-panel {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  width: 30%;
+  background: #0c1a52;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  z-index: 998;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  &.open {
+    max-height: 100vh;
+  }
+}
+
+/* SCROLL FIX */
+.menu-scroll {
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
+}
+
+/* MENU CONTENT */
+.menu-inner {
+  padding: 40px 60px;
+  display: grid;
+  gap: 30px;
+
+  @media (max-width: 992px) {
+    gap: 20px;
+  }
+}
+
+/* MOBILE LINKS */
+.mobile-main-links {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: white;
+    }
+
+    &.active {
+      color: white;
+    }
+  }
+}
+
+/* ACCORDION */
+.accordion {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 14px;
+
+  @media (max-width: 992px) {
+    padding-top: 10px;
+  }
+
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4CAF50;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  ul {
+    margin-top: 12px;
+    list-style: none;
+    padding-left: 15px;
+
+    li {
+      color: #4CAF50;
+      font-size: 14px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: white;
+      }
+
+      /* Style for NavLink inside li */
+      a {
+        color: #4CAF50;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: white;
+        }
+
+        &.active {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 10px 15px;
+
+    &.scrolled {
+      padding: 2px 15px;
+      background: #ffffff;
+      /* White background on mobile when scrolled */
+    }
+  }
+
+  .nav-logo {
+    width: 80px;
+  }
+
+  .nav-links li:not(.menu-toggle) {
+    display: none;
+  }
+
+  .mobile-main-links {
+    display: flex;
+  }
+
+  .menu-panel {
+    top: 73px;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .menu-scroll {
+    max-height: calc(100vh - 100px);
+  }
+
+  .menu-toggle {
+    padding-right: 30px;
+  }
+
+  /* CHANGED: Menu toggle icon color on mobile when scrolled */
+  .scrolled .menu-toggle {
+    color: #0c1a52;
+    /* Blue color when scrolled on mobile */
+  }
+}

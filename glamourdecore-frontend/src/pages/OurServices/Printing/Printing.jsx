@@ -1,0 +1,32 @@
+import React from 'react'
+import ServiceDetailLayout from '../ServiceInquiryLayout/ServiceDetailLayout'
+
+
+import inquiryImg from "../../../assets/images/home/newimg.png";
+import heroImg from "../../../assets/images/services/printing/printing-hero.png";
+
+
+const Printing = () => {
+    return (
+        <>
+            <ServiceDetailLayout
+                heroSubHeading="Our Services"
+                heroHeading="PRINTING"
+                heroImage={heroImg}
+
+                contentHeading="About our printing service"
+                contentParagraphs={[
+                    "Printing on a Glass bottle is a popular decoration technique that permits us to add lively colours, unique design, and brandingcharacteristics to your Glass bottle Surface.",
+                    "We are engaged in high-quality printing techniques like Organic print, Ceramic Print, Pad print, and hot foil stamp transfer to ensure enduring & crispy designs. Printing not only makes a packaging solution distinctive but also provides brand divergence and elegant appeal to the glass bottle surface. ",
+                    "Printing is a process that allows us to imprint the graphics and logos directly onto your bottle. Our printing services give your brand a unique brand identity with an attractive packaging solution; finally, your products stand out from ordinary glass bottles. Printing makes your product more visually appealing, leaves the conventional way of labelling, and differentiates your product among several others on the shelf."
+                ]}
+
+                inquiryImage={inquiryImg}
+                inquiryApi="/api/inquiry/printing"
+
+            />
+        </>
+    )
+}
+
+export default Printing

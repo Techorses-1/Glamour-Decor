@@ -1,0 +1,121 @@
+/* ================= FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+  font-family: "HeadFonts";
+  src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HeadFonts2";
+  src: url("../../../assets/fonts/head2.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ================= SECTION ================= */
+.glass-benefits {
+  padding: 40px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.glass-benefits-container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/* ================= CARD ================= */
+.benefit-card {
+  border: 1.5px solid #2b2bff;
+  border-radius: 70px;
+  padding: 20px 50px;
+  margin-bottom: 35px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: all 0.8s ease;
+
+  h4 {
+    font-family: "HeadFonts", sans-serif;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+/* ================= ANIMATION ================= */
+.from-left {
+  transform: translateX(-80px);
+}
+
+.from-right {
+  transform: translateX(80px);
+}
+
+.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ================= EXTRA CONTENT (INSIDE 4TH CARD) ================= */
+.extra-section {
+  margin-top: 22px;
+}
+
+/* ================= SUB ITEMS ================= */
+.sub-item {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  align-items: flex-start;
+
+  .line {
+    width: 4px;
+    height: 44px;            /* IMPORTANT: short vertical line */
+    background: #2ecc71;
+    border-radius: 4px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  h4 {
+    font-family: "HeadFonts", sans-serif;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 992px) {
+  .glass-benefits-container {
+    width: 90%;
+  }
+
+  .benefit-card {
+    padding: 20px 24px;
+    border-radius: 35px;
+  }
+
+  .sub-item {
+    .line {
+      height: 42px;
+    }
+  }
+}

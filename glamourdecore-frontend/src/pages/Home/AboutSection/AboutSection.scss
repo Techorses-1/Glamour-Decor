@@ -1,0 +1,426 @@
+/* ================= FONT ================= */
+@font-face {
+  font-family: "HeadFonts";
+  src: url("../../../assets/fonts/headfont.ttf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "HeadFonts2";
+  src: url("../../../assets/fonts/head2.otf") format("opentype");
+}
+
+/* ================= ANIMATION KEYFRAMES ================= */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes underlineGrow {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 60px;
+  }
+}
+
+/* ================= SECTION ================= */
+.about-section {
+  background: #f6f2ec;
+  padding: 90px 0;
+  overflow: hidden;
+
+  @media (max-width: 992px) {
+    padding: 40px 0;
+  }
+}
+
+.about-wrapper {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+/* ================= LEFT ================= */
+.about-left {
+  display: grid;
+  opacity: 0;
+  /* Start hidden */
+
+  &.animate {
+    animation: fadeInLeft 1s ease forwards;
+
+    .about-title {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 0.3s forwards;
+
+      .underline {
+        animation: underlineGrow 0.8s ease 0.8s forwards;
+        width: 0;
+      }
+    }
+
+    .main-heading {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 0.5s forwards;
+    }
+
+    .about-text {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 0.7s forwards;
+    }
+
+    .highlight-text {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 0.9s forwards;
+    }
+  }
+}
+
+.about-title {
+  font-size: 42px;
+  font-family: "HeadFonts";
+  font-weight: 700;
+
+  .underline {
+    width: 60px;
+    height: 3px;
+    background: #280f91;
+    margin-top: 8px;
+    display: block;
+    margin-left: 0;
+  }
+}
+
+.main-heading {
+  font-size: 36px;
+  line-height: 1.3;
+  margin: 20px 0;
+  font-family: "HeadFonts";
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: "HeadFonts2";
+  max-width: 520px;
+  text-align: justify;
+}
+
+.highlight-text {
+  margin-top: 20px;
+  font-size: 28px;
+  font-family: "HeadFonts";
+
+
+  @media (max-width: 992px) {
+
+    margin-top: -20px;
+  }
+}
+
+/* ================= RIGHT ================= */
+.about-right {
+  display: grid;
+  justify-items: end;
+  opacity: 0;
+  /* Start hidden */
+
+  &.animate {
+    animation: fadeInRight 1s ease 0.2s forwards;
+
+    .company-info {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 0.5s forwards;
+    }
+
+    .image-slider {
+      opacity: 0;
+      animation: scaleIn 0.8s ease 0.7s forwards;
+    }
+
+    .right-caption {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 0.9s forwards;
+    }
+  }
+}
+
+.company-info {
+  font-size: 28px;
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(5px);
+
+    svg {
+      transform: rotate(45deg);
+    }
+  }
+
+  svg {
+    color: #280f91;
+    font-size: 32px;
+    transition: transform 0.3s ease;
+  }
+}
+
+/* IMAGE SLIDER */
+.image-slider {
+  width: 420px;
+  height: 320px;
+  margin-top: 58px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+
+
+
+}
+
+.slider-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* UPDATED: Slider controls at bottom left */
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+/* UPDATED: Green arrows without background */
+.nav {
+  background: transparent !important;
+  /* No background */
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  svg {
+    font-size: 32px;
+    /* Larger arrows */
+    color: #2a5e2c !important;
+    /* Green color */
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    color: #388E3C !important;
+    /* Darker green on hover */
+  }
+}
+
+.right-caption {
+  margin-top: 20px;
+  font-size: 28px;
+  text-align: right;
+  font-family: "HeadFonts";
+}
+
+/* ================= MOBILE ONLY ================= */
+@media (max-width: 992px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    width: 90%;
+    gap: 40px;
+  }
+
+  .about-left,
+  .about-right {
+    display: flex;
+    flex-direction: column;
+
+    &.animate {
+      animation: fadeInUp 1s ease forwards;
+
+      .about-title,
+      .main-heading,
+      .about-text,
+      .highlight-text,
+      .company-info,
+      .image-slider,
+      .right-caption {
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+      }
+    }
+  }
+
+  /* Add explicit order for mobile layout */
+  .about-left {
+    order: 1;
+  }
+
+  .about-right {
+    order: 2;
+
+    /* Re-order elements inside right section - COMPANY INFO AT BOTTOM */
+    .image-slider {
+      order: 1;
+      width: 100%;
+      height: 260px;
+      margin: 20px 0;
+
+      .slider-controls {
+        bottom: 15px;
+        left: 15px;
+      }
+
+      .nav svg {
+        font-size: 28px;
+      }
+    }
+
+    .right-caption {
+      order: 2;
+      text-align: left;
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    /* COMPANY INFO AT THE VERY BOTTOM */
+    .company-info {
+      order: 3;
+      justify-content: center;
+      align-self: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+  }
+
+  .about-left.animate {
+    .about-title {
+      animation-delay: 0.2s;
+    }
+
+    .main-heading {
+      animation-delay: 0.3s;
+    }
+
+    .about-text {
+      animation-delay: 0.4s;
+    }
+
+    .highlight-text {
+      animation-delay: 0.5s;
+    }
+  }
+
+  .about-right.animate {
+    animation-delay: 0.1s;
+
+    .image-slider {
+      animation-delay: 0.6s;
+    }
+
+    .right-caption {
+      animation-delay: 0.7s;
+    }
+
+    .company-info {
+      animation-delay: 0.8s;
+    }
+
+    /* Company info animates last */
+  }
+
+  .about-title {
+    font-size: 30px;
+  }
+
+  .main-heading {
+    font-size: 24px;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+
+  /* REMOVE LINE BREAKS ON MOBILE */
+  .highlight-text br,
+  .right-caption br {
+    display: none;
+  }
+
+  .highlight-text {
+    font-size: 22px;
+    margin-bottom: 20px;
+    /* Space before image */
+  }
+}
