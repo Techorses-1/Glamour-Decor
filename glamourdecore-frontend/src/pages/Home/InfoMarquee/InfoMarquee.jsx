@@ -4,15 +4,15 @@ import "./InfoMarquee.scss";
 const items = [
   {
     title: "HOW WE WORK?",
-    desc: "Top management is involved for packing solutions!",
+    desc: "Top management is involved for packing solutions.",
   },
   {
     title: "WHAT WE DO?",
-    desc: "Comprehensive solution for all Glass decor needs!",
+    desc: "Comprehensive solution for all Glass decor needs.",
   },
   {
     title: "GET A QUOTE!",
-    desc: "Our warehouse area spread over 62000 Sq feet!",
+    desc: "Our warehouse area spread over 62000 Sq feet.",
   },
 ];
 
